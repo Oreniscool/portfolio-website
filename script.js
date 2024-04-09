@@ -153,7 +153,6 @@ function pageScroll() {
     let objDiv = document.querySelector('.drawer');
     if (!checkHover(objDiv)) {
       objDiv.scrollLeft = objDiv.scrollLeft + 1;
-      console.log(objDiv.scrollLeft, objDiv.scrollWidth, screen.width);
       if (objDiv.scrollWidth - objDiv.scrollLeft - objDiv.clientWidth < 1) {
         setTimeout(function () {
           objDiv.scrollLeft = 0;

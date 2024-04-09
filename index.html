@@ -13,10 +13,10 @@
   </head>
   <body>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#social">Social</a>
+      <a onclick="goto('home')">Home</a>
+      <a onclick="goto('skills')">Skills</a>
+      <a onclick="goto('projects')">Projects</a>
+      <a onclick="goto('social')">Social</a>
     </nav>
     <section class="content">
       <section class="home" id="home">
@@ -77,5 +77,12 @@
     </section>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
+    <script>
+      function goto(hashtag) {
+        let myElement = document.querySelector(`.${hashtag}`);
+        let topPos = myElement.offsetTop;
+        document.querySelector('.content').scrollTop = topPos;
+      }
+    </script>
   </body>
 </html>
