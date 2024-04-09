@@ -144,3 +144,37 @@ const loadProjects = () => {
 };
 loadSkills();
 loadProjects();
+
+function pageScroll() {
+  let my_time;
+  let count = 0;
+  // If condition to set repeat
+  if (count < 2) {
+    let objDiv = document.querySelector('.drawer');
+    if (!checkHover(objDiv)) {
+      objDiv.scrollLeft = objDiv.scrollLeft + 1;
+      console.log(objDiv.scrollLeft, objDiv.scrollWidth, screen.width);
+      if (objDiv.scrollWidth - objDiv.scrollLeft - objDiv.clientWidth < 1) {
+        setTimeout(function () {
+          objDiv.scrollLeft = 0;
+          count++;
+        }, 2000);
+      }
+    }
+
+    //set scrolling time start
+    my_time = setTimeout('pageScroll()', 15);
+    //set scrolling time end
+  }
+}
+const checkHover = (div) => {
+  const children = Array.from(div.children);
+  let flag = false;
+  children.forEach((child) => {
+    if (child.matches(':hover') || child.matches(':focus')) {
+      flag = true;
+    }
+  });
+  return flag;
+};
+setTimeout('pageScroll()', 2000);
