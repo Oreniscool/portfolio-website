@@ -184,6 +184,7 @@ const checkHover = (div) => {
 const baseUrl = 'https://api.github.com';
 async function getGithubUserInfo(userName) {
   try {
+    await new GitHubCalendar('.calendar', 'Oreniscool', { responsive: true });
     const response = await fetch(`${baseUrl}/users/${userName}`);
     const json = await response.json();
     return json;

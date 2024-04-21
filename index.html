@@ -44,7 +44,7 @@
         <div class="calendar"></div>
       </section>
       <section class="social" id="social">
-        <h2>Connect with me</h2>
+        <h2>Connect with me via</h2>
         <div class="board">
           <div class="socials">
             <div class="connection">
@@ -90,23 +90,7 @@
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
-    <script>
-      new GitHubCalendar('.calendar', 'Oreniscool', { responsive: true });
-    </script>
-    <script type="text/javascript">
-      if (screen.width > 900) {
-        document.addEventListener('mousemove', parallax);
-      }
-
-      function parallax(e) {
-        const speed = 1.5;
-        const x = (window.innerWidth - e.pageX * speed) / 100;
-        const y = (window.innerHeight - e.pageY * speed) / 100;
-        document.querySelector(
-          '.background'
-        ).style.transform = `translateX(${x}px) translateY(${y}px)`;
-      }
-    </script>
+    <script type="text/javascript" src="backgroundParallax.js"></script>
     <script>
       function goto(hashtag) {
         let myElement = document.querySelector(`.${hashtag}`);
