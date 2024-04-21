@@ -8,14 +8,22 @@
       src="https://kit.fontawesome.com/de9ca8d89e.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
   </head>
   <body>
+    <div class="background" aria-hidden="true"></div>
     <nav>
       <a onclick="goto('home')">Home</a>
       <a onclick="goto('skills')">Skills</a>
       <a onclick="goto('projects')">Projects</a>
+      <a onclick="goto('contributions')">Stats</a>
       <a onclick="goto('social')">Social</a>
     </nav>
     <section class="content">
@@ -30,6 +38,10 @@
       <section class="projects" id="projects">
         <h2>My Projects</h2>
         <div class="drawer"></div>
+      </section>
+      <section class="contributions" id="contributions">
+        <h2>GitHub Stats</h2>
+        <div class="calendar"></div>
       </section>
       <section class="social" id="social">
         <h2>Connect with me</h2>
@@ -75,13 +87,28 @@
         </div>
       </section>
     </section>
+
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
+    <script>
+      new GitHubCalendar('.calendar', 'Oreniscool', { responsive: true });
+    </script>
+    <script type="text/javascript">
+      document.addEventListener('mousemove', parallax);
+      function parallax(e) {
+        const speed = 1.5;
+        const x = (window.innerWidth - e.pageX * speed) / 100;
+        const y = (window.innerHeight - e.pageY * speed) / 100;
+        document.querySelector(
+          '.background'
+        ).style.transform = `translateX(${x}px) translateY(${y}px)`;
+      }
+    </script>
     <script>
       function goto(hashtag) {
         let myElement = document.querySelector(`.${hashtag}`);
         let topPos = myElement.offsetTop;
-        document.querySelector('.content').scrollTop = topPos;
+        document.querySelector('.content').scrollTop = topPos - 100;
       }
     </script>
   </body>

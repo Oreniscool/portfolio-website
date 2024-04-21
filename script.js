@@ -145,6 +145,7 @@ const loadProjects = () => {
 loadSkills();
 loadProjects();
 
+//scrolling on pages
 function pageScroll() {
   let my_time;
   let count = 0;
@@ -176,4 +177,40 @@ const checkHover = (div) => {
   });
   return flag;
 };
+
+//ADD NEW INFO
+
+//GITHUB REST API
+const baseUrl = 'https://api.github.com';
+async function getGithubUserInfo(userName) {
+  try {
+    const response = await fetch(`${baseUrl}/users/${userName}`);
+    const json = await response.json();
+    return json;
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+async function addGithubUserInfo() {
+  const info = await getGithubUserInfo('Oreniscool');
+  const publicRepos = info.public_repos;
+  const followers = info.followers;
+  const following = info.following;
+  const columns = Array.from(document.querySelectorAll('.contrib-column'));
+  printInfo(publicRepos, followers, following, columns);
+}
+const printInfo = (publicRepos, followers, following, columns) => {
+  columns[0].children[0].textContent = 'Public repos';
+  columns[0].children[1].textContent = publicRepos;
+  columns[1].children[0].textContent = 'Followers';
+  columns[1].children[1].textContent = followers;
+  columns[2].children[0].textContent = 'Following';
+  columns[2].children[1].textContent = following;
+  columns.forEach((column) => {
+    column.children[0].style = 'font-size:1rem';
+    column.children[2].textContent = '';
+  });
+};
+addGithubUserInfo();
 setTimeout('pageScroll()', 2000);
