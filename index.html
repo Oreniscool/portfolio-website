@@ -94,7 +94,10 @@
       new GitHubCalendar('.calendar', 'Oreniscool', { responsive: true });
     </script>
     <script type="text/javascript">
-      document.addEventListener('mousemove', parallax);
+      if (screen.width > 900) {
+        document.addEventListener('mousemove', parallax);
+      }
+
       function parallax(e) {
         const speed = 1.5;
         const x = (window.innerWidth - e.pageX * speed) / 100;
