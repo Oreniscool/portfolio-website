@@ -7,6 +7,36 @@ let typed = new Typed('.auto-input', {
 
 const skills = [
   {
+    name: 'React',
+    img: './assets/skills/react.png',
+    desc: 'Deep knowledge of React and React workflow.',
+  },
+  {
+    name: 'Redux',
+    img: './assets/skills/redux.svg',
+    desc: 'Knowledge of managing application state using Redux.',
+  },
+  {
+    name: 'Tailwind CSS',
+    img: './assets/skills/tailwind.png',
+    desc: 'Fluent in using tailwind css in many projects.',
+  },
+  {
+    name: 'MongoDB Atlas',
+    img: './assets/skills/mongodb.svg',
+    desc: 'Implemented MongoDB atlas with all CURD operations.',
+  },
+  {
+    name: 'Next.js',
+    img: './assets/skills/nextjs.png',
+    desc: 'Used next.js to make websites more performant using app router and hybrid rendering.',
+  },
+  {
+    name: 'JavaScript',
+    img: './assets/skills/JavaScript-logo.png',
+    desc: 'Fluent in advanced JavaScript concepts like ES6 modules, webpack, asynchronous programming.',
+  },
+  {
     name: 'HTML',
     img: './assets/skills/html.png',
     desc: 'Able to implement advanced HTML topics like WAI-ARIA and WCAG guidelines for websites.',
@@ -15,12 +45,7 @@ const skills = [
     name: 'CSS',
     img: './assets/skills/css.png',
     desc: 'Extensive wisdom on intermediate and advanced CSS concepts like transforms, transitions and keyframes.',
-  },
-  {
-    name: 'JavaScript',
-    img: './assets/skills/JavaScript-logo.png',
-    desc: 'Fluent in advanced JavaScript concepts like ES6 modules, webpack, asynchronous programming.',
-  },
+  }, 
   {
     name: 'Node',
     img: './assets/skills/node-js.png',
@@ -37,14 +62,9 @@ const skills = [
     desc: 'Made projects implementing multi-threading and Tkinter GUI.',
   },
   {
-    name: 'React',
-    img: './assets/skills/react.png',
-    desc: 'Beginner knowledge of react workflow.',
-  },
-  {
     name: 'CPP',
     img: './assets/skills/cpp.png',
-    desc: 'Experience in working with C++.',
+    desc: 'Experience in working with C++ STL.',
   },
   {
     name: 'Java',
@@ -59,6 +79,12 @@ const skills = [
 ];
 
 const projects = [
+  {
+    name: 'Purchazoid',
+    img: './assets/projects/purchazoid.png',
+    desc: 'A complete shopping experience made in React and Tailwind.',
+    link: 'https://shopping-cart-nine-flame.vercel.app/',
+  },
   {
     name: 'TickTracker',
     img: './assets/projects/ticktracker.png',
